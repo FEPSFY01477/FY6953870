@@ -115,7 +115,28 @@ This will follow with a case study that I have done on a few civil engineering c
 </p>  
 </pre> 
 </p>   
- 
+
+ <p id="totalWordCount"></p>p>
+ <hr>
+ <script>
+
+   function displayWordCount(sectionId, outputId) {
+     const text = document.getElementById(sectionId).textContent;
+     const wordArray = text.trim().split(/\s+/);
+     const wordCount = wordArray.length;
+     return wordCount;
+   }
+
+  function displayTotalWordCount() {
+
+    const IntroductionCount = displayWordCount("Introduction_in_Text")
+    const MechanismCount = displayWordCount("Mechanism_in_Text")
+
+    const totalWordCount = IntroductionCount + MechanismCount
+
+    document.getElementById("totalWordCount").innerText = 'Total word count: ${totalWordCount}';
+   
+ </script>
 
  
  
